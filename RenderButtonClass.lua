@@ -1,3 +1,7 @@
+--@name RenderButtonClass
+--@author retarded puppygirl
+--@client
+
 class = {}
 class.__index = class
 
