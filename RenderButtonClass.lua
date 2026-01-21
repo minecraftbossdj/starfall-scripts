@@ -66,7 +66,7 @@ function class:processClick()
     local cursX, cursY = render.cursorPos(owner(), nil)
 
     if cursX ~= nil and isInside(self.x, self.y, self.buttonMaxX, self.buttonMaxY, cursX, cursY) then
-        self.buttonFunc(self)
+        self:buttonFunc(self)
     end
 end
 
