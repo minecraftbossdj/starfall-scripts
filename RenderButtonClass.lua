@@ -39,6 +39,7 @@ function class:new(x, y, buttonMaxX, buttonMaxY, buttonColor, highlightColor, te
     obj.textColor = textColor
     obj.buttonFunc = buttonFunc
     setmetatable(obj, class)
+    self.__index = self
     return obj
 end
 
