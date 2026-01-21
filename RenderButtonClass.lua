@@ -27,17 +27,17 @@ end
 
 function class:new(x, y, buttonMaxX, buttonMaxY, buttonColor, highlightColor, textLocalX, textLocalY, text, textColor, buttonFunc)
     local obj = {}
-    class.x = x
-    class.y = y
-    class.buttonMaxX = buttonMaxX
-    class.buttonMaxY = buttonMaxY
-    class.highlightColor = highlightColor
-    class.buttonColor = buttonColor
-    class.textLocalX = textLocalX
-    class.textLocalY = textLocalY
-    class.text = text
-    class.textColor = textColor
-    class.buttonFunc = buttonFunc
+    obj.x = x
+    obj.y = y
+    obj.buttonMaxX = buttonMaxX
+    obj.buttonMaxY = buttonMaxY
+    obj.highlightColor = highlightColor
+    obj.buttonColor = buttonColor
+    obj.textLocalX = textLocalX
+    obj.textLocalY = textLocalY
+    obj.text = text
+    obj.textColor = textColor
+    obj.buttonFunc = buttonFunc
     setmetatable(obj, class)
     return obj
 end
