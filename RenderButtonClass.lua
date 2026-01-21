@@ -69,3 +69,6 @@ function class:processClick()
         self.buttonFunc(self)
     end
 end
+
+
+return class
