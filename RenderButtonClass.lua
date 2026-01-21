@@ -39,6 +39,9 @@ function class:new(x, y, buttonMaxX, buttonMaxY, buttonColor, highlightColor, te
     obj.textColor = textColor
     obj.buttonFunc = buttonFunc
     setmetatable(obj, self)
+    
+    enableHud(owner(), true)
+
     return obj
 end
 
