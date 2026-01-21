@@ -43,7 +43,8 @@ function class:new(x, y, buttonMaxX, buttonMaxY, buttonColor, highlightColor, te
 end
 
 function class:render()
-    local cursX, cursY = render.cursorPos(owner(), nil)
+    local screen = render.getScreenEntity() or chip():getLinkedComponents()[1]
+    local cursX, cursY = render.cursorPos(owner(), screen)
     local oldColor = render.getColor()
 
     --button
@@ -63,7 +64,8 @@ function class:render()
 end
 
 function class:processClick()
-    local cursX, cursY = render.cursorPos(owner(), nil)
+    local screen = render.getScreenEntity() or chip():getLinkedComponents()[1]
+    local cursX, cursY = render.cursorPos(owner(), screen)
 
     if cursX ~= nil and isInside(self.x, self.y, self.buttonMaxX, self.buttonMaxY, cursX, cursY) then
         self:buttonFunc(self)
