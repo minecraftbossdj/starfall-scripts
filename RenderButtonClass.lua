@@ -54,15 +54,16 @@ function class:render()
     render.setColor(self.buttonColor)
     render.drawRect(self.x, self.y, self.buttonMaxX, self.buttonMaxY)
 
-    --text
-    render.setColor(self.textColor)
-    render.drawText(self.x+self.textLocalX, self.y+self.textLocalY, self.text)
-
     --button highlight
     if cursX ~= nil and isInside(self.x, self.y, self.buttonMaxX, self.buttonMaxY, cursX, cursY) then
         render.setColor(self.highlightColor)
         render.drawRect(self.x, self.y, self.buttonMaxX, self.buttonMaxY)
     end
+
+    --text
+    render.setColor(self.textColor)
+    render.drawText(self.x+self.textLocalX, self.y+self.textLocalY, self.text)
+    
     render.setColor(oldColor)
 end
 
