@@ -18,7 +18,7 @@ class.textColor = Color(0, 0, 0)
 class.buttonFunc = nil
 
 function isInside(x, y, maxX, maxY, checkX, checkY)
-    if checkX > x and checkY > y and checkX < maxX and checkY < maxY then
+    if checkX > x and checkY > y and checkX < maxX+x and checkY < maxY+y then
         return true
     else
         return false
@@ -71,7 +71,7 @@ function class:processClick()
     local screen = render.getScreenEntity() or chip():getLinkedComponents()[1]
     local cursX, cursY = render.cursorPos(owner(), screen)
 
-    if cursX ~= nil and isInside(self.x, self.y, self.buttonMaxX+self.x, self.buttonMaxY+self.y, cursX, cursY) then
+    if cursX ~= nil and isInside(self.x, self.y, self.buttonMaxX, self.buttonMaxY, cursX, cursY) then
         self.buttonFunc(self)
     end
 end
