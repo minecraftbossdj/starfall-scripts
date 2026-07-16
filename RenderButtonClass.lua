@@ -71,7 +71,7 @@ function class:processClick()
     local screen = render.getScreenEntity() or chip():getLinkedComponents()[1]
     local cursX, cursY = render.cursorPos(owner(), screen)
 
-    if cursX ~= nil and isInside(self.x, self.y, self.buttonMaxX, self.buttonMaxY, cursX, cursY) then
+    if cursX ~= nil and isInside(self.x, self.y, self.buttonMaxX+self.x, self.buttonMaxY+self.y, cursX, cursY) then
         self.buttonFunc(self)
     end
 end
